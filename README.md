@@ -45,3 +45,6 @@ python producerexample.py my-confluent-oss-cp-kafka-headless:9092 my-confluent-o
 python readerexample.py my-confluent-oss-cp-kafka-headless:9092 G1 my-confluent-oss-topic
 
 ```
+
+Origonal Pyhton code links
+https://github.com/confluentinc/confluent-kafka-python
