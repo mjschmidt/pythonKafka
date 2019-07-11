@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-07-03T14:08:57Z"
+  labels:
+    app: cp-kafka
+    chart: cp-kafka-0.1.0
+    heritage: Tiller
+    release: my-confluent-oss
+  name: my-confluent-oss-cp-kafka-nodeport
+  namespace: default
+  resourceVersion: "3984347"
+  selfLink: /api/v1/namespaces/default/services/my-confluent-oss-cp-kafka-headless
+  uid: 194442b5-9d9c-11e9-9ee0-027fe54a539e
+spec:
+  ports:
+  - name: broker
+    port: 9092
+    protocol: TCP
+    targetPort: 9092
+  selector:
+    app: cp-kafka
+    release: my-confluent-oss
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

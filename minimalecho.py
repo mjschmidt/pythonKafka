@@ -43,13 +43,12 @@ def print_usage_and_exit(program_name):
 
 if __name__ == '__main__':
     optlist, argv = getopt.getopt(sys.argv[1:], 'T:')
-    if len(argv) < 3:
+    if len(argv) < 0:
         print_usage_and_exit(sys.argv[0])
 
-    broker = argv[0]
-    group = argv[1]
-    topics = argv[2:]
-    print(topics)
+    broker = "my-confluent-oss-topic:9092"
+    group = 1
+    topics = ['my-confluent-oss-topic']
     # Consumer configuration
     # See https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
     conf = {'bootstrap.servers': broker, 'group.id': group, 'session.timeout.ms': 6000,
